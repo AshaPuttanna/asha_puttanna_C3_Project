@@ -71,5 +71,12 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+
+    @Test
+    public void calculate_order_value() {
+        restaurant.addToMenu("Sweet corn soup",10);
+        restaurant.addToMenu("Vegetable lasagne", 20);
+        assertEquals(restaurant.calculateOrderValue(),30.0);
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
